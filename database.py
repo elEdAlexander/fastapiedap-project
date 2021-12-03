@@ -22,7 +22,6 @@ class factura(Model):
     subtotal = DoubleField()
     itbis = DoubleField()
     total = DoubleField()
-    usuario:IntegerField()
     detalle: List[facturadetalle] = []
 
     class Meta:
@@ -102,7 +101,6 @@ def guardarfactura(obj:factura):
     fac.subtotal = obj.subtotal
     fac.itbis = obj.itbis
     fac.total = obj.total
-    fac.usuario = obj.usuario
     fac.save()
 
     for dett in obj.detalle:
